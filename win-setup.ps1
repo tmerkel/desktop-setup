@@ -1,5 +1,5 @@
 param (
-    [boolean]$includeWsl = 0
+    [boolean]$includeWsl = 1
 )
 
 function Log-Header {
@@ -27,7 +27,7 @@ if ($includeWsl) {
     ubuntu
 
     Log-Header "Installing WSL..."
-    wsl --set-version Ubuntu 2
+    wsl --set-version Ubuntu-18.04 2
 }
 
 # Sourcetree
@@ -52,6 +52,9 @@ code --install-extension "christian-kohler.npm-intellisense"
 code --install-extension "eg2.vscode-npm-script"
 code --install-extension "sdras.night-owl"
 code --install-extension "ms-vscode-remote.remote-wsl"
+
+Log-Header "Installing Node..."
+choco install nodejs -y
 
 Log-Header "Installing Yarn..."
 choco install yarn -y
