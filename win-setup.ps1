@@ -64,6 +64,7 @@ code --install-extension "ms-vscode.vscode-typescript-tslint-plugin"
 code --install-extension "christian-kohler.npm-intellisense"
 code --install-extension "eg2.vscode-npm-script"
 code --install-extension "sdras.night-owl"
+code --install-extension "ms-vscode-remote.vscode-remote-extensionpack"
 code --install-extension "ms-vscode-remote.remote-wsl"
 
 Log-Header "Installing Node..."
