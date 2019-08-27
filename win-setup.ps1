@@ -19,6 +19,10 @@ choco install openssh -y
 
 Log-Header "Installing Git..."
 choco install git -y
+git config --global core.autocrlf input
+
+Log-Header "Installing Docker Desktop..."
+choco install docker-desktop  -y
 
 Log-Header "Installing .Net Core 3.0..."
 choco install dotnetcore-sdk --pre -y
