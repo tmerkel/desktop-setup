@@ -58,3 +58,9 @@ choco install nodejs -y
 
 Log-Header "Installing Yarn..."
 choco install yarn -y
+
+Log-Header "Installing Postman..."
+choco install postman -y
+
+Log-Header "Installing Firefox..."
+choco install firefox -y
