@@ -14,6 +14,15 @@ mkdir temp
 Log-Header "Installing Chocolately..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+Log-Header "Installing OpenSSH..."
+choco install openssh -y
+
+Log-Header "Installing Git..."
+choco install git -y
+
+Log-Header "Installing .Net Core 3.0..."
+choco install dotnetcore-sdk --pre -y
+
 if ($includeWsl) {
     # WSL
     Log-Header "WSL!"
