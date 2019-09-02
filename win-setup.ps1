@@ -66,6 +66,8 @@ code --install-extension "eg2.vscode-npm-script"
 code --install-extension "sdras.night-owl"
 code --install-extension "ms-vscode-remote.vscode-remote-extensionpack"
 code --install-extension "ms-vscode-remote.remote-wsl"
+code --install-extension "octref.vetur"
+code --install-extension "ms-azuretools.vscode-docker"
 
 Log-Header "Installing Node..."
 choco install nodejs -y
