@@ -81,5 +81,8 @@ choco install postman -y
 Log-Header "Installing Firefox..."
 choco install firefox -y
 
+Log-Header "Installing Chrome..."
+choco install googlechrome -y
+
 Log-Header "Installing Slack..."
 choco install slack -y
