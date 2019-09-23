@@ -86,3 +86,7 @@ choco install googlechrome -y
 
 Log-Header "Installing Slack..."
 choco install slack -y
+
+Log-Header "Installing Globel Node Packages..."
+Log-Header "Installing Vue CLI..."
+yarn global add @vue/cli
