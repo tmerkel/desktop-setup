@@ -45,11 +45,11 @@ if ($includeWsl) {
 
 # Sourcetree
 Log-Header "Installing Sourcetree..."
-choco install sourcetree -y 
+choco install sourcetree -y
 
 # VSCode
 Log-Header "Installing VSCode..."
-choco install vscode -y 
+choco install vscode -y
 
 Log-Header "Installing Fira Code..."
 choco install firacode -y
@@ -68,6 +68,9 @@ code --install-extension "ms-vscode-remote.vscode-remote-extensionpack"
 code --install-extension "ms-vscode-remote.remote-wsl"
 code --install-extension "octref.vetur"
 code --install-extension "ms-azuretools.vscode-docker"
+
+Log-Header "Installing MongoDb"
+choco install mongodb -y
 
 Log-Header "Installing Node..."
 choco install nodejs -y
@@ -90,3 +93,6 @@ choco install slack -y
 Log-Header "Installing Globel Node Packages..."
 Log-Header "Installing Vue CLI..."
 yarn global add @vue/cli
+
+Log-Header "Installing Gatsby CLI..."
+yarn global add gatsby-cli
