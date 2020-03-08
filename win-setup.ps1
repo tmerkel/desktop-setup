@@ -10,7 +10,6 @@ function Log-Header {
 
 mkdir temp
 
-# Chocolately
 Log-Header "Installing Chocolately..."
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -24,12 +23,11 @@ git config --global core.autocrlf input
 Log-Header "Installing Docker Desktop..."
 choco install docker-desktop  -y
 
-Log-Header "Installing .Net Core 3.0..."
-choco install dotnetcore-sdk --pre -y
+Log-Header "Installing .Net Core..."
+choco install dotnetcore
 
 if ($includeWsl) {
-    # WSL
-    Log-Header "WSL!"
+    Log-Header "Setting up WSL 2"
     Log-Header "Getting Ubuntu 18.04..."
     curl.exe -L -o ./temp/ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
 
@@ -39,35 +37,24 @@ if ($includeWsl) {
     Log-Header "Installing Ubuntu...I'm gonna need some input here..."
     ubuntu
 
-    Log-Header "Installing WSL..."
+    Log-Header "Connecting Ubuntu to WSL 2..."
     wsl --set-version Ubuntu-18.04 2
+
+    Log-Header "Setting WSL Version to 2"
+    wsl --set-default-version 2
 }
 
-# Sourcetree
 Log-Header "Installing Sourcetree..."
 choco install sourcetree -y
 
-# VSCode
 Log-Header "Installing VSCode..."
 choco install vscode -y
 
 Log-Header "Installing Fira Code..."
 choco install firacode -y
 
-Log-Header "Installing Extensions..."
-
-code --install-extension "ms-vscode.csharp"
-code --install-extension "msjsdiag.debugger-for-chrome"
-code --install-extension "ms-vscode.powershell"
-code --install-extension "esbenp.prettier-vscode"
-code --install-extension "ms-vscode.vscode-typescript-tslint-plugin"
-code --install-extension "christian-kohler.npm-intellisense"
-code --install-extension "eg2.vscode-npm-script"
-code --install-extension "sdras.night-owl"
-code --install-extension "ms-vscode-remote.vscode-remote-extensionpack"
-code --install-extension "ms-vscode-remote.remote-wsl"
-code --install-extension "octref.vetur"
-code --install-extension "ms-azuretools.vscode-docker"
+Log-Header "Installing Python"
+choco install python -y
 
 Log-Header "Installing MongoDb"
 choco install mongodb -y
@@ -96,3 +83,25 @@ yarn global add @vue/cli
 
 Log-Header "Installing Gatsby CLI..."
 yarn global add gatsby-cli
+
+Log-Header "Installing AWS CLI..."
+choco install awscli -y
+
+Log-Header "Installing PSCore..."
+choco install powershell-core -y
+
+Log-Header "Installing VSCode Extensions..."
+
+code --install-extension "ms-vscode.csharp"
+code --install-extension "msjsdiag.debugger-for-chrome"
+code --install-extension "ms-vscode.powershell"
+code --install-extension "esbenp.prettier-vscode"
+code --install-extension "ms-vscode.vscode-typescript-tslint-plugin"
+code --install-extension "christian-kohler.npm-intellisense"
+code --install-extension "eg2.vscode-npm-script"
+code --install-extension "sdras.night-owl"
+code --install-extension "ms-vscode-remote.vscode-remote-extensionpack"
+code --install-extension "ms-vscode-remote.remote-wsl"
+code --install-extension "octref.vetur"
+code --install-extension "ms-azuretools.vscode-docker"
+code --install-extension "humao.rest-client"
