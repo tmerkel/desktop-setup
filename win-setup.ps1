@@ -44,8 +44,8 @@ if ($includeWsl) {
     wsl --set-default-version 2
 }
 
-Log-Header "Installing Sourcetree..."
-choco install sourcetree -y
+Log-Header "Installing Fork..."
+choco install git-fork -y
 
 Log-Header "Installing VSCode..."
 choco install vscode -y
@@ -105,3 +105,8 @@ code --install-extension "ms-vscode-remote.remote-wsl"
 code --install-extension "octref.vetur"
 code --install-extension "ms-azuretools.vscode-docker"
 code --install-extension "humao.rest-client"
+code --install-extension "ms-python.python"
+
+pip install virtualenv
+pip install -U autopep8 --user
+pip install -U pylint --user
